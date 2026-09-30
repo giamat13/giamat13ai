@@ -94,7 +94,7 @@ function startRec(){stopRec(true);dl.hidden=true;outUrl='';endAt=0;
   r.ondataavailable=e=>{if(e.data.size)ch.push(e.data)};
   r.onstop=()=>{if(r.discard)return;outExt=mime.startsWith('video/mp4')?'mp4':'webm';outUrl=URL.createObjectURL(new Blob(ch,{type:mime}));dl.textContent='הורד '+outExt.toUpperCase();dl.hidden=false;save()};
   r.start();rec=r;recT0=performance.now()}
-function cap(){const w=rc.width,h=rc.height,fs=Math.round(w*.074),L=['I asked claude','to build the pyramids of giza...'];
+function cap(){const w=rc.width,h=rc.height,fs=Math.round(w*.074),L=['I asked claude','to build the','pyramids of giza...'];
   const f=prog/N,done=f>=1;let q=Math.floor((performance.now()-recT0)/22);
   rx.textBaseline='middle';rx.lineJoin='round';rx.strokeStyle='rgba(40,20,10,.9)';
   const X=(t,y,z,c)=>{rx.font='bold '+z+'px Georgia,serif';rx.lineWidth=z*.2;const x=(w-rx.measureText(t).width)/2;rx.textAlign='left';rx.fillStyle=c||'#fff';rx.strokeText(t,x,y);rx.fillText(t,x,y)};
